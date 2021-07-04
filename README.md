@@ -1,0 +1,2 @@
+# django_recognition_test
+django_recognition_test
