@@ -5,44 +5,32 @@ from imutils import face_utils
 
 # read image
 img = cv2.imread('./images/girl.png')
+ 
+# shape predictor
+shape_predictor = dlib.shape_predictor('./models/shape_predictor_68_face_landmarks.dat')
+# face_descriptor
+shape_descriptor = dlib.face_recognition_model_v1('./models/dlib_face_recognition_resnet_model_v1.dat')
 
-cv2.imshow('image', img)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+# step-1: Face detection
+image = img.copy()
+face_detector = dlib.get_frontal_face_detector()
 
-# load the model
-net = cv2.dnn.readNetFromCaffe('./models/deploy.prototxt.txt',
-                               './models/res10_300x300_ssd_iter_140000_fp16.caffemodel')
-
-# extract blob
-blob = cv2.dnn.blobFromImage(img,1,(300,300),(104,177,123),swapRB=False)
-
-# the blob as input 
-net.setInput(blob) 
-# run the model
-detections = net.forward()
-
-detections.shape
-
-h,w = img.shape[:2]
-for i in range(0,detections.shape[2]):
-    confidence = detections[0,0,i,2] 
-    if confidence >= 0.5:
-        # print(confidence)
-        # bounding box (3:7)
-        box = detections[0,0,i,3:7]
-        box = box*np.array([w,h,w,h])
-        box = box.astype(int)
-        startx, starty, endx, endy = box
-        
-        # draw the rectangle
-        cv2.rectangle(img, (startx,starty),(endx,endy),(0,255,0))
-        
-        # put text 
-        text = 'Face: {:.2f} %'.format(confidence*100)
-        cv2.putText(img, text,(startx,starty-10),cv2.FONT_HERSHEY_PLAIN,1,(255,255,255))
-        
-        
-cv2.imshow('image', img)
+faces = face_detector(image)
+for box in faces:
+    pt1 = box.left(), box.top()
+    pt2 = box.right(), box.bottom()
+    
+    face_shape = shape_predictor(image,box)
+    face_shape_array = face_utils.shape_to_np(face_shape)
+    
+    # shape_descriptor.shape_descriptor.compute_face_descriptor(image,face_shape)
+   
+    # print(face_shape_array)
+    for point in face_shape_array:
+        cv2.circle(image, tuple(point),3,(255,255,0),-1)
+    
+    cv2.rectangle(image, pt1, pt2,(0,0,255))
+    
+cv2.imshow('image', image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
