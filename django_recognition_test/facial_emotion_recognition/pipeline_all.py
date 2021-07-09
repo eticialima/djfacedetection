@@ -66,7 +66,7 @@ def pipeline_model(path):
                 count += 1
                 
             
-    return image, machinlearning_results
+    return image 
 
 img, results = pipeline_model('./data/scalertt_robert.jpg')
 cv2.imshow('detection',img)
