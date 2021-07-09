@@ -4,11 +4,13 @@ import sklearn
 import pickle
 
 # face detection
-face_detector_model = cv2.dnn.readNetFromCaffe('./models/deploy.prototxt.txt', './models/res10_300x300_ssd_iter_140000.caffemodel')
+face_detector_model = cv2.dnn.readNetFromCaffe('./models/deploy.prototxt.txt',
+                                               './models/res10_300x300_ssd_iter_140000.caffemodel')
 # feature extraction
 face_feature_model = cv2.dnn.readNetFromTorch('./models/openface.nn4.small2.v1.t7')
 # face recognition
-face_recognition_model = pickle.load(open('./models/machinelearning_face_person_identity.pkl', mode='rb'))
+face_recognition_model = pickle.load(open('./models/machinelearning_face_person_identity.pkl',
+                                          mode='rb'))
 # emotion recognition model
 emotion_recognition_model = pickle.load(open('./models/machinelearning_face_emotion.pkl',mode='rb'))
 
@@ -66,9 +68,9 @@ def pipeline_model(path):
                 count += 1
                 
             
-    return image 
+    return image, machinlearning_results
 
-img, results = pipeline_model('./data/scalertt_robert.jpg')
+img, results = pipeline_model('./data/leticia_elisa.jpg')
 cv2.imshow('detection',img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
