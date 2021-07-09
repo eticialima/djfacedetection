@@ -12,19 +12,13 @@ def Index(request):
     if request.method == 'POST':
         form = FaceRecognitionform(request.POST or None, request.FILES or None)
         if form.is_valid():
-            save = form.save(commit=True)
-
+            save = form.save(commit=True) 
             # Extract the image object from database and
             primary_key = save.pk
             imgobj = FaceRecognition.objects.get(pk=primary_key)
             fileroot = str(imgobj.image)
             filepath = os.path.join(settings.MEDIA_ROOT,fileroot)
-            results = pipeline_model(filepath)
-
+            results = pipeline_model(filepath) 
             print(results)
             return render(request,'index.html',{'form':form,'upload':True,'results':results})
- 
     return render(request,'index.html',{'form':form,'uplaod':False})
-
-
- 

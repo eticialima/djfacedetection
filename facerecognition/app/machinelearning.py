@@ -2,8 +2,9 @@ import numpy as np
 import cv2
 import sklearn
 import pickle
+from django.conf import settings 
 import os
-from django.conf import settings
+
 STATIC_DIR = settings.STATIC_DIR
 
 
@@ -17,6 +18,7 @@ face_recognition_model = pickle.load(open(os.path.join(STATIC_DIR,'models/machin
                                           mode='rb'))
 # emotion recognition model
 emotion_recognition_model = pickle.load(open(os.path.join(STATIC_DIR,'models/machinelearning_face_emotion.pkl'),mode='rb'))
+
 
 def pipeline_model(path):
     # pipeline model
@@ -65,7 +67,7 @@ def pipeline_model(path):
 
                 cv2.imwrite(os.path.join(settings.MEDIA_ROOT,'ml_output/process.jpg'),image)
                 cv2.imwrite(os.path.join(settings.MEDIA_ROOT,'ml_output/roi_{}.jpg'.format(count)),face_roi)
-                    
+                
                 machinlearning_results['count'].append(count)
                 machinlearning_results['face_detect_score'].append(confidence)
                 machinlearning_results['face_name'].append(face_name)
