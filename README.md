@@ -43,7 +43,7 @@ py manage.py runserver
 http://127.0.0.1:8000/
 ```
 ### detalhe 
-<p> O o database do projeto foi terminado com um banco de imagens local. para reconhecer novas imagens voce precisa executar o arquivo de treinamento e substituir na pasta static/models</p>
+<p> O database do projeto foi compilado com um banco de imagens local. Para reconhecer novas imagens voce precisa executar o arquivo de treinamento e substituir na pasta static/models</p>
 
 ### Obrigada ❤️
 <p>Qualquer duvida pode me chamar no instagram [@eticialima](https://www.instagram.com/eticialima).</p> 
