@@ -2,7 +2,7 @@
 django_recognition_test 
 ### Previa
  
-<img src="git/demo.jpg?raw=true"/>
+<img src="git/demo.png?raw=true"/>
 
 ### Ferramentas
 * Python

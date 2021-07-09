@@ -32,7 +32,7 @@ def pipeline_model(path):
     
     # machcine results
     machinlearning_results = dict(face_detect_score = [], 
-                                 face_name = [],
+                                #  face_name = [],
                                  face_name_score = [],
                                  emotion_name = [],
                                  emotion_name_score = [],
@@ -53,15 +53,15 @@ def pipeline_model(path):
                 vectors = face_feature_model.forward()
 
                 # predict with machine learning
-                face_name = face_recognition_model.predict(vectors)[0]
+                # face_name = face_recognition_model.predict(vectors)[0]
                 face_score = face_recognition_model.predict_proba(vectors).max()
                 # EMOTION 
                 emotion_name = emotion_recognition_model.predict(vectors)[0]
                 emotion_score = emotion_recognition_model.predict_proba(vectors).max()
 
-                text_face = '{} : {:.0f} %'.format(face_name,100*face_score)
+                # text_face = '{} : {:.0f} %'.format(face_name,100*face_score)
                 text_emotion = '{} : {:.0f} %'.format(emotion_name,100*emotion_score)
-                cv2.putText(image,text_face,(startx,starty),cv2.FONT_HERSHEY_PLAIN,2,(255,255,255),2)
+                # cv2.putText(image,text_face,(startx,starty),cv2.FONT_HERSHEY_PLAIN,2,(255,255,255),2)
                 cv2.putText(image,text_emotion,(startx,endy),cv2.FONT_HERSHEY_PLAIN,2,(255,255,255),2)
 
 
@@ -70,7 +70,7 @@ def pipeline_model(path):
                 
                 machinlearning_results['count'].append(count)
                 machinlearning_results['face_detect_score'].append(confidence)
-                machinlearning_results['face_name'].append(face_name)
+                # machinlearning_results['face_name'].append(face_name)
                 machinlearning_results['face_name_score'].append(face_score)
                 machinlearning_results['emotion_name'].append(emotion_name)
                 machinlearning_results['emotion_name_score'].append(emotion_score)
