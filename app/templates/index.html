@@ -68,31 +68,7 @@
                             {% for detect_score in results.face_detect_score %}
                             <td>{{ detect_score }}</td>
                             {% endfor %}
-                        </tr> 
-                        <!-- <tr>
-                            <td class="font-weight-bold">Nome</td>
-                            {% for name in results.face_name %}
-                            <td>{{ name }}</td>
-                            {% endfor %}
-                        </tr>  -->
-                        <tr>
-                            <td scope="col">Face Score</td>
-                            {% for name_score in results.face_name_score %}
-                            <td>{{ name_score }}</td>
-                            {% endfor %}
-                        </tr> 
-                        <tr>
-                            <td>Emotion</td>
-                            {% for emotion in results.emotion_name %}
-                            <td>{{ emotion }}</td>
-                            {% endfor %}
-                        </tr> 
-                        <tr>
-                            <td>Emotion Score</td>
-                            {% for emotion_score in results.emotion_name_score %}
-                            <td>{{ emotion_score }}</td>
-                            {% endfor %}
-                        </tr> 
+                        </tr>  
                     </table> 
                 </div>
             </div>
@@ -103,6 +79,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-</body>
-
+</body> 
 </html>
