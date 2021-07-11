@@ -9,10 +9,9 @@ django_recognition_test
 * Django
 * OpenCV
 * Numpy 
-* outros
+* outros 
 
-
-<p>Esse projeto é um estudo sobre detecção e analise facial. Foi utilizado a linguagem principal que é python e as bibliotecas OpenCV e Numpy para o desenvolvimento. Toda interface foi trabalhada em django. E com base nas tecnicas de Machine Learning e Deep Learning montamos toda a estrutura para o reconhecimento.</p>
+<p>Esse projeto é um estudo sobre detecção e analise facial. Foi utilizado a linguagem principal que é python e as bibliotecas OpenCV e Numpy para o desenvolvimento. Toda interface foi trabalhada em django. </p>
 
 ### Arquivos no repositorio
 * app.pasta
@@ -42,9 +41,7 @@ py manage.py runserver
 ```
 http://127.0.0.1:8000/
 ```
-### detalhe 
-<p> O database do projeto foi compilado com um banco de imagens local. Para reconhecer novas imagens voce precisa executar o arquivo de treinamento e substituir na pasta static/models</p>
-
+ 
 ### Obrigada ❤️
 <p>Qualquer duvida pode me chamar no instagram [@eticialima](https://www.instagram.com/eticialima).</p> 
 <br> 
