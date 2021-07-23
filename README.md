@@ -12,15 +12,7 @@ django_recognition_test
 * outros 
 
 <p>Esse projeto é um estudo sobre detecção e analise facial. Foi utilizado a linguagem principal que é python e as bibliotecas OpenCV e Numpy para o desenvolvimento. Toda interface foi trabalhada em django. </p>
-
-### Arquivos no repositorio
-* app.pasta
-* facerecognition.pasta 
-* media/static
-* manege.py 
-* requirements.txt
-* e outros
-
+ 
 ### Como usar ? 
 <p>* Utilize Pycharm ou IDE de sua preferencia</P><p> Você pode baixar o repositorio ou clona-lo e depois executar o arquivo. Não se esquece de instalar as dependencias</P> 
  
