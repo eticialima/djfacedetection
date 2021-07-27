@@ -1,4 +1,4 @@
-# django_recognition_test
+# django_face_detection
 django_recognition_test 
 ### Previa
  
