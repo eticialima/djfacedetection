@@ -1,5 +1,5 @@
 asgiref==3.3.4
-Django==3.2.5
+Django==3.2.11
 django-widget-tweaks==1.4.8
 joblib==1.0.1
 numpy==1.20.3
